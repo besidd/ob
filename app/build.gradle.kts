@@ -61,4 +61,6 @@ dependencies {
 
     implementation(libs.hilt)
     kapt(libs.compiler)
+
+    implementation(libs.runtime)
 }
