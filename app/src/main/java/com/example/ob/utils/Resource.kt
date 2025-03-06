@@ -2,7 +2,7 @@ package com.example.ob.utils
 
 
 sealed class Resource<T>(
-    val data: T? = null,
+    var data: T? = null,
     val message: String? = null
 ) {
     class Success<T>(data: T) : Resource<T>(data)

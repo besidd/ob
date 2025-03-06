@@ -10,6 +10,7 @@ activityCompose = "1.10.0"
 composeBom = "2024.04.01"
 hilt = "2.51.1"
 runtime = "1.7.8"
+exoplayer = "1.5.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -29,6 +30,9 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt"}
 compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt"}
 runtime = {group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "runtime"}
+exoplayer = {group = "androidx.media3", name = "media3-exoplayer", version.ref = "exoplayer"}
+exoplayerdash = {group = "androidx.media3", name = "media3-exoplayer-dash", version.ref = "exoplayer"}
+exoplayerui = {group = "androidx.media3", name = "media3-ui", version.ref = "exoplayer"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

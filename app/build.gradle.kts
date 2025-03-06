@@ -63,4 +63,7 @@ dependencies {
     kapt(libs.compiler)
 
     implementation(libs.runtime)
+    implementation(libs.exoplayer)
+    implementation(libs.exoplayerdash)
+    implementation(libs.exoplayerui)
 }
