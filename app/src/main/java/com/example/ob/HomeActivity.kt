@@ -47,9 +47,11 @@ class HomeActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            viewModel.getCards()
-            viewModel.getSfxs()
-            viewModel.playSound(R.raw.matchthepictures)
+            viewModel.let {
+                it.getCards()
+                it.getSfxs()
+                it.playSound(R.raw.matchthepictures)
+            }
             ObTheme {
                 Scaffold(
                     modifier = Modifier
@@ -76,8 +78,8 @@ fun SetupGame(viewModel: GameViewModel) {
                 .padding(30.dp),
             verticalArrangement = Arrangement.Center
         ) {
-            GameScreen(cards = state, viewModel = viewModel)
-            GameScreen2(sfxs = sfxs, viewModel = viewModel)
+            LoadPhotos(cards = state, viewModel = viewModel)
+            LoadSfx(sfxs = sfxs, viewModel = viewModel)
         }
     } else {
         Column(
@@ -98,7 +100,7 @@ fun SetupGame(viewModel: GameViewModel) {
 
 
 @Composable
-fun GameScreen(modifier: Modifier = Modifier, cards: List<Card>, viewModel: GameViewModel) {
+fun LoadPhotos(modifier: Modifier = Modifier, cards: List<Card>, viewModel: GameViewModel) {
     LazyVerticalGrid(
         modifier = modifier,
         columns = GridCells.Fixed(GRID_SIZE)
@@ -112,7 +114,7 @@ fun GameScreen(modifier: Modifier = Modifier, cards: List<Card>, viewModel: Game
 }
 
 @Composable
-fun GameScreen2(modifier: Modifier = Modifier, sfxs: List<Card>, viewModel: GameViewModel) {
+fun LoadSfx(modifier: Modifier = Modifier, sfxs: List<Card>, viewModel: GameViewModel) {
     LazyVerticalGrid(
         modifier = modifier.padding(top = 10.dp),
         columns = GridCells.Fixed(GRID_SIZE)
